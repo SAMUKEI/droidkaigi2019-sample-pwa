@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="/assets/css/main.min.css"/>
+  <title>PWAサンプルアプリ</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="rec-container">
+    <div class="main-content">
+      <video id="camera" playsinline></video>
+      <audio id="music"></audio>
+    </div>
+
+    <div class="top-content mx-auto text-center">
+      <label for="music-file" class="btn btn-raised bg-white">音楽ファイル読み込み</label>
+      <input type="file" id="music-file" accept="music/*" class="form-control-file d-none">
+      <label class="bg-info text-white">残り: <label id="remain_time"></label>秒</label>
+    </div>
+
+    <div class="bottom-content mx-auto text-center">
+      <button id="rec_start" type="button" class="btn btn-raised btn-primary">録画開始</button>
+      <button id="rec_stop" type="button" class="btn btn-raised btn-danger">一時停止</button>
+    </div>
+
+  </div>
+
+  <div id="mixed-container" class="row">
+    <div class="col-12">
+      <video id="mixed" class="w-100" autoplay loop></video>
+    </div>
+  </div>
+
+</div>
+
+<script src="/assets/javascript/bundle.js"></script>
+<script>
+  if (Notification.permission !== 'denied') { // 通知を拒否していない場合
+    Notification.requestPermission(); // 通知の許諾を取得
+  }
+
+  // Service Worker登録
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function (err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "PWAサンプルアプリ",
+  "short_name": "PWAサンプル",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/img/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "droidkaigi2019",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "samukei",
+  "scripts": {
+    "build": "npm run sass & npm run browserify & npm run autoprefixer",
+    "sass": "node-sass --output-style compressed ./scss/import.scss ./dist/main.css",
+    "sass-dev": "node-sass --output-style expanded ./scss/import.scss ./dist/main.css",
+    "browserify": "browserify -g uglifyify script/*.js > ./public/assets/javascript/bundle.js",
+    "autoprefixer": "postcss --use autoprefixer -o ./public/assets/css/main.min.css ./dist/main.css",
+    "sync": "browser-sync start --server ./public/ --files='./public/**/*.html, ./public/assets/**/*'",
+    "watch": "npm run watch-sass & npm run watch-watchify & npm run watch-autoprefixer & npm run sync",
+    "watch-sass": "nodemon -e scss -x \"npm run sass-dev\"",
+    "watch-watchify": "watchify script/*.js -o ./public/assets/javascript/bundle.js -dv",
+    "watch-autoprefixer": "nodemon -e scss -x \"npm run autoprefixer\""
+  },
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1",
+    "firebase": "^5.8.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6",
+    "snackbarjs": "^1.1.0",
+    "uglifyify": "^5.0.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie > 11",
+    "Android >= 5",
+    "iOS >= 10"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "browser-sync": "^2.24.5",
+    "browserify": "^16.2.2",
+    "ejs-cli": "^2.0.1",
+    "node-sass": "^4.9.3",
+    "node-sass-import": "^1.1.1",
+    "nodemon": "^1.17.5",
+    "postcss-cli": "^5.0.1",
+    "watchify": "^3.11.0"
+  }
+}
