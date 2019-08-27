@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "autoprefixer": "^8.6.4",
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.3",
     "browserify": "^16.2.2",
     "ejs-cli": "^2.0.1",
     "node-sass": "^4.9.3",
