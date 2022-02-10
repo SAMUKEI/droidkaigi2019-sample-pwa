@@ -34,7 +34,7 @@
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.2",
     "ejs-cli": "^2.0.1",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "node-sass-import": "^1.1.1",
     "nodemon": "^1.17.5",
     "postcss-cli": "^5.0.1",
